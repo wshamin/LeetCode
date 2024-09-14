@@ -11,9 +11,9 @@ public class Solution {
         char[] ransomNoteAsArray = ransomNote.toCharArray();
         char[] magazineAsArray = magazine.toCharArray();
 
-        for (int i = 0; i < ransomNoteAsArray.length; i++) {
+        for (char c : ransomNoteAsArray) {
             for (int j = 0; j < magazineAsArray.length; j++) {
-                if (ransomNoteAsArray[i] == magazineAsArray[j]) {
+                if (c == magazineAsArray[j]) {
                     magazineAsArray[j] = ' ';
                     elementsFound++;
                     break;
@@ -21,10 +21,6 @@ public class Solution {
             }
         }
 
-        if (elementsFound == ransomNoteAsArray.length) {
-            return true;
-        }
-
-        return false;
+        return elementsFound == ransomNoteAsArray.length;
     }
 }
